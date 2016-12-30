@@ -15,6 +15,10 @@
 		18CDFEB51E16FE5F001F0581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CDFEB31E16FE5F001F0581 /* LaunchScreen.storyboard */; };
 		18CDFEC01E16FE5F001F0581 /* SDTypeSelectViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEBF1E16FE5F001F0581 /* SDTypeSelectViewTests.m */; };
 		18CDFECB1E16FE5F001F0581 /* SDTypeSelectViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFECA1E16FE5F001F0581 /* SDTypeSelectViewUITests.m */; };
+		18CDFEDB1E170672001F0581 /* SelectXialaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEDA1E170672001F0581 /* SelectXialaView.m */; };
+		18CDFEE01E170699001F0581 /* BigDuiGouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEDD1E170698001F0581 /* BigDuiGouTableViewCell.m */; };
+		18CDFEE11E170699001F0581 /* DuiGouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEDF1E170698001F0581 /* DuiGouTableViewCell.m */; };
+		18CDFEE51E170EB7001F0581 /* 客户管理筛选三列_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,15 @@
 		18CDFEC61E16FE5F001F0581 /* SDTypeSelectViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDTypeSelectViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CDFECA1E16FE5F001F0581 /* SDTypeSelectViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDTypeSelectViewUITests.m; sourceTree = "<group>"; };
 		18CDFECC1E16FE5F001F0581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18CDFED91E170672001F0581 /* SelectXialaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectXialaView.h; sourceTree = "<group>"; };
+		18CDFEDA1E170672001F0581 /* SelectXialaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectXialaView.m; sourceTree = "<group>"; };
+		18CDFEDC1E170698001F0581 /* BigDuiGouTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigDuiGouTableViewCell.h; sourceTree = "<group>"; };
+		18CDFEDD1E170698001F0581 /* BigDuiGouTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigDuiGouTableViewCell.m; sourceTree = "<group>"; };
+		18CDFEDE1E170698001F0581 /* DuiGouTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuiGouTableViewCell.h; sourceTree = "<group>"; };
+		18CDFEDF1E170698001F0581 /* DuiGouTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuiGouTableViewCell.m; sourceTree = "<group>"; };
+		18CDFEE21E17078E001F0581 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		18CDFEE31E170803001F0581 /* EPMacro_Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPMacro_Function.h; sourceTree = "<group>"; };
+		18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户管理筛选三列_03.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				18CDFEA61E16FE5F001F0581 /* main.m */,
+				18CDFEE21E17078E001F0581 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,6 +158,14 @@
 		18CDFED81E16FFFD001F0581 /* sdTypeSelectView */ = {
 			isa = PBXGroup;
 			children = (
+				18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */,
+				18CDFEE31E170803001F0581 /* EPMacro_Function.h */,
+				18CDFED91E170672001F0581 /* SelectXialaView.h */,
+				18CDFEDA1E170672001F0581 /* SelectXialaView.m */,
+				18CDFEDC1E170698001F0581 /* BigDuiGouTableViewCell.h */,
+				18CDFEDD1E170698001F0581 /* BigDuiGouTableViewCell.m */,
+				18CDFEDE1E170698001F0581 /* DuiGouTableViewCell.h */,
+				18CDFEDF1E170698001F0581 /* DuiGouTableViewCell.m */,
 			);
 			path = sdTypeSelectView;
 			sourceTree = "<group>";
@@ -254,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CDFEE51E170EB7001F0581 /* 客户管理筛选三列_03.png in Resources */,
 				18CDFEB51E16FE5F001F0581 /* LaunchScreen.storyboard in Resources */,
 				18CDFEB21E16FE5F001F0581 /* Assets.xcassets in Resources */,
 				18CDFEB01E16FE5F001F0581 /* Main.storyboard in Resources */,
@@ -283,6 +306,9 @@
 			files = (
 				18CDFEAD1E16FE5F001F0581 /* ViewController.m in Sources */,
 				18CDFEAA1E16FE5F001F0581 /* AppDelegate.m in Sources */,
+				18CDFEE11E170699001F0581 /* DuiGouTableViewCell.m in Sources */,
+				18CDFEDB1E170672001F0581 /* SelectXialaView.m in Sources */,
+				18CDFEE01E170699001F0581 /* BigDuiGouTableViewCell.m in Sources */,
 				18CDFEA71E16FE5F001F0581 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SDTypeSelectView/PrefixHeader.pch";
 				INFOPLIST_FILE = SDTypeSelectView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SD.SDTypeSelectView;
@@ -441,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SDTypeSelectView/PrefixHeader.pch";
 				INFOPLIST_FILE = SDTypeSelectView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SD.SDTypeSelectView;

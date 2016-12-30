@@ -1,0 +1,20 @@
+//
+//  DuiGouTableViewCell.h
+//  tcrj_tcyun
+//
+//  Created by apple on 16/4/13.
+//  Copyright © 2016年 Mac. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface DuiGouTableViewCell : UITableViewCell
+
+@property (nonatomic,strong)UIImageView *cellDuiGouImage;
+
+@property (nonatomic,strong)UILabel *cellLabel;
+
+-(void)setModle:(BOOL)isBool;
+-(void)setNoDuiGouModle:(BOOL)isBool;
+-(void)setCellLabelHangHight:(NSString *)text;
+@end
