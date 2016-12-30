@@ -57,6 +57,12 @@
     [btn setTitleColor:fontHightColor forState:UIControlStateNormal];
     [btn  addTarget:self action:@selector(btn) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: btn];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 105, mDeviceWidth, 0.5);
+    label.backgroundColor = [UIColor blackColor];
+    
+    [self.view addSubview:label];
 }
 
 -(void)btn{

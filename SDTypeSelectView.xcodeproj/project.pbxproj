@@ -19,6 +19,7 @@
 		18CDFEE01E170699001F0581 /* BigDuiGouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEDD1E170698001F0581 /* BigDuiGouTableViewCell.m */; };
 		18CDFEE11E170699001F0581 /* DuiGouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEDF1E170698001F0581 /* DuiGouTableViewCell.m */; };
 		18CDFEE51E170EB7001F0581 /* 客户管理筛选三列_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */; };
+		18CDFEE91E1718C5001F0581 /* typeselect.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18CDFEE81E1718C5001F0581 /* typeselect.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		18CDFEE21E17078E001F0581 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18CDFEE31E170803001F0581 /* EPMacro_Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPMacro_Function.h; sourceTree = "<group>"; };
 		18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户管理筛选三列_03.png"; sourceTree = "<group>"; };
+		18CDFEE81E1718C5001F0581 /* typeselect.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = typeselect.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		18CDFED81E16FFFD001F0581 /* sdTypeSelectView */ = {
 			isa = PBXGroup;
 			children = (
+				18CDFEE81E1718C5001F0581 /* typeselect.gif */,
 				18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */,
 				18CDFEE31E170803001F0581 /* EPMacro_Function.h */,
 				18CDFED91E170672001F0581 /* SelectXialaView.h */,
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CDFEE51E170EB7001F0581 /* 客户管理筛选三列_03.png in Resources */,
+				18CDFEE91E1718C5001F0581 /* typeselect.gif in Resources */,
 				18CDFEB51E16FE5F001F0581 /* LaunchScreen.storyboard in Resources */,
 				18CDFEB21E16FE5F001F0581 /* Assets.xcassets in Resources */,
 				18CDFEB01E16FE5F001F0581 /* Main.storyboard in Resources */,
