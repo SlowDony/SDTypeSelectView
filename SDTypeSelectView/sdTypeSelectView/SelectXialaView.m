@@ -72,7 +72,7 @@
                 rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         rightTableView.backgroundColor = [UIColor whiteColor];
         
-//       [rightTableView selectRowAtIndexPath:[NSIndexPath indexPathWithIndex:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+
         
         [bjView addSubview:rightTableView];
         
@@ -118,7 +118,7 @@
 
 
 -(void)chongzhiClicked:(UIButton *)sender{
-//    DLog(@"chongzhi");
+
     if([self.delegate respondsToSelector:@selector(SelectXialaViewBtn:)]){
         [self.delegate SelectXialaViewBtn:sender];
     }
@@ -159,7 +159,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return  [<#parameter#> count];
+
     if (tableView ==leftTableView)
     {
         return self.selectXiaLadataArray.count;
@@ -173,12 +173,6 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    static NSString *cellId = @"sCellID";
-//    BigDuiGouTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-//    if (cell == nil) {
-//        cell =[[BigDuiGouTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-//    }
-    
     static NSString *duiHaoCellId = @"duiHaoCellId";
     DuiGouTableViewCell *duiCell = [tableView dequeueReusableCellWithIdentifier:duiHaoCellId];
     if (duiCell == nil) {
@@ -199,8 +193,6 @@
     }
     else
     {
-//        duiCell.cellLabel.text=self.selectRightArray[indexPath.row];
-        
         [duiCell setCellLabelHangHight:self.selectRightArray[indexPath.row]];
 //        duiCell.cellLabel.backgroundColor=[UIColor redColor];
         [duiCell setModle:[self cellIsRightSelected:indexPath]];
@@ -271,7 +263,7 @@
     }else if(tableView==rightTableView){
         
         DuiGouTableViewCell *cell =(DuiGouTableViewCell*)[self tableView:rightTableView cellForRowAtIndexPath:indexPath];
-//              DLog(@"height%ld",cell.frame.size.height);
+
         return cell.frame.size.height;
         
     }else {

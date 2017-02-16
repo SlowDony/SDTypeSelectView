@@ -11,10 +11,10 @@
 
 @interface ViewController ()<SelectXialaViewDelegate>
 {
-       SelectXialaView *selectV ;
-       NSMutableArray *mutableArr;
-      NSMutableArray *selectArr;
-        NSMutableArray *selectLeftArr;
+    SelectXialaView *selectV ;
+    NSMutableArray *mutableArr;
+    NSMutableArray *selectArr;
+    NSMutableArray *selectLeftArr;
 }
 @end
 
@@ -22,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     mutableArr =[[NSMutableArray alloc]initWithObjects:@"客户状态",@"客户分类",@"热点客户",@"意向产品",@"报备状态",@"所属大区",nil];
+    
+    mutableArr =[[NSMutableArray alloc]initWithObjects:@"客户状态",@"客户分类",@"热点客户",@"意向产品",@"报备状态",@"所属大区",nil];
     selectArr =[[NSMutableArray alloc]init];
     selectLeftArr =[[NSMutableArray alloc]init];
     NSIndexPath* rightSelectIndexPath =[NSIndexPath indexPathForRow:0 inSection:0];
@@ -135,6 +136,7 @@
     
     [selectV.rightTableView reloadData];
     [selectV.leftTableView reloadData];
+    
     /*
     [selectRightIndexDic setValue:@"0"forKey:@"CusStatus"]; //客户状态
     [selectRightIndexDic setValue:@"0" forKey:@"CusClass"]; //客户分类
@@ -278,11 +280,8 @@
             typeMutabArr =[[NSMutableArray alloc]init];
             
             for (int i=0;i<yixiangChanpinArr.count;i++){
-                
-                
+             
                 [arr addObject:yixiangChanpinArr[i][@"PName"]];
-                
-                
             }
             
             [selectV.selectRightArray addObjectsFromArray:arr];
