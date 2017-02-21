@@ -300,7 +300,7 @@
         case 5: //莲湖区
         {
             [selectV.selectRightArray removeAllObjects];
-            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"陕西区",@"西北区",@"华北,华中区",@"西南区", nil];
+            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"回民街",@"钟楼",@"大寨路",@"西稍门", @"大兴新区",@"丰庆公园",@"北关正街",@"莲湖路",@"桃园路",nil];
             [selectV.selectRightArray addObjectsFromArray:arr];
             //            [rightTableView reloadData];
         }
