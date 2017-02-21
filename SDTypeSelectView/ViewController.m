@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    mutableArr =[[NSMutableArray alloc]initWithObjects:@"客户状态",@"客户分类",@"热点客户",@"意向产品",@"报备状态",@"所属大区",nil];
+    mutableArr =[[NSMutableArray alloc]initWithObjects:@"全程热门",@"附近",@"雁塔区",@"未央区",@"碑林区",@"莲湖区",nil];
     selectArr =[[NSMutableArray alloc]init];
     selectLeftArr =[[NSMutableArray alloc]init];
     NSIndexPath* rightSelectIndexPath =[NSIndexPath indexPathForRow:0 inSection:0];
@@ -220,25 +220,25 @@
 
 -(void)rightTableAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
-        case 0: //客户状态
+        case 0: //全程热门
         {
             
             [selectV.selectRightArray removeAllObjects];
-            NSArray *arr =[[NSArray alloc]initWithObjects:@"不限",@"潜在客户",@"意向客户",@"成交客户",@"失败客户", nil];
+            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"南大学城",@"小寨",@"回民街",@"钟楼",@"龙首村",@"电子城",@"阎良",nil];
             [selectV.selectRightArray addObjectsFromArray:arr];
             
             //            [rightTableView reloadData];
             
         }
             break;
-        case 1: //客户分类
+        case 1: //附近
         {
             
             
             [selectV.selectRightArray removeAllObjects];
             
             
-            NSArray *arr =[[NSArray alloc]initWithObjects:@"不限",@"直销客户",@"代理商",@"合作伙伴", @"VIP客户",@"老客户",@"供货商",nil];
+            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"500m",@"1km",@"3km", @"5km",nil];
             [selectV.selectRightArray addObjectsFromArray:arr];
             
             /*
@@ -258,20 +258,20 @@
              */
         }
             break;
-        case 2: //热点客户
+        case 2: //雁塔区
         {
             
             
             [selectV.selectRightArray removeAllObjects];
-            NSArray *arr =[[NSArray alloc]initWithObjects:@"不限",@"否",@"是", nil];
+            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"小寨",@"电子城",@"枫林绿洲",@"吉祥村",@"电视塔", @"大雁塔",@"科技路西口",nil];
             [selectV.selectRightArray addObjectsFromArray:arr];
             //            [rightTableView reloadData];
         }
             break;
-        case 3: //意向产品
+        case 3: //未央区
         {
             [selectV.selectRightArray removeAllObjects];
-            NSArray *arr =[[NSArray alloc]initWithObjects:@"不限",@"点击档案管理系统软件",@"工程建设领域项目和信用信息公开共享专栏",@"宗地统一编码",@"业务管理系统定制开发", @"国土数据中心系统(国土一张图平台)国土综合业务应用系统",nil];
+            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"龙首村",@"未央路沿线",@"大明宫万达",@"赛高街区", @"三桥",@"北大明宫",@"北辰大道",@"北大学城",@"市图书馆",nil];
             [selectV.selectRightArray addObjectsFromArray:arr];
             /*
             NSMutableArray *arr =[NSMutableArray array];
@@ -289,18 +289,18 @@
             */
         }
             break;
-        case 4: //报备状态
+        case 4: //碑林区
         {
             [selectV.selectRightArray removeAllObjects];
-            NSArray *arr =[[NSArray alloc]initWithObjects:@"不限",@"是",@"否", nil];
+            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"南门",@"钟楼",@"长乐坊",@"李家村万达" ,@"南稍门",@"含光路",@"中贸广场",@"交大",@"东大街",nil];
             [selectV.selectRightArray addObjectsFromArray:arr];
             //            [rightTableView reloadData];
         }
             break;
-        case 5: //所属大区
+        case 5: //莲湖区
         {
             [selectV.selectRightArray removeAllObjects];
-            NSArray *arr =[[NSArray alloc]initWithObjects:@"不限",@"陕西区",@"西北区",@"华北,华中区",@"西南区", nil];
+            NSArray *arr =[[NSArray alloc]initWithObjects:@"全部",@"陕西区",@"西北区",@"华北,华中区",@"西南区", nil];
             [selectV.selectRightArray addObjectsFromArray:arr];
             //            [rightTableView reloadData];
         }
