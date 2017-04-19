@@ -8,7 +8,7 @@
 
 #import "SelectXialaView.h"
 #import "DuiGouTableViewCell.h"
-#import "BigDuiGouTableViewCell.h"
+
 @interface SelectXialaView () <UITableViewDelegate,UITableViewDataSource>
 {
     NSIndexPath *selectIndexPath;
