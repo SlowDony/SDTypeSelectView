@@ -14,6 +14,16 @@
     [super awakeFromNib];
     // Initialization code
 }
++(instancetype)cellWithTableView:(UITableView *)tableView{
+    static NSString *cellId = @"DuiGouTableViewCellID";
+    DuiGouTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        
+        cell =[[DuiGouTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    
+    return cell;
+}
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self =[super initWithStyle:style reuseIdentifier:reuseIdentifier];

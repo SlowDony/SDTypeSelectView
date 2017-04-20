@@ -14,6 +14,14 @@
 
 @property (nonatomic,strong)UILabel *cellLabel;
 
+/**
+ 初始化cell
+
+ @param tableView 父类列表
+ @return cell单元格
+ */
++(instancetype)cellWithTableView:(UITableView *)tableView;
+
 -(void)setModle:(BOOL)isBool;
 -(void)setNoDuiGouModle:(BOOL)isBool;
 -(void)setCellLabelHangHight:(NSString *)text;

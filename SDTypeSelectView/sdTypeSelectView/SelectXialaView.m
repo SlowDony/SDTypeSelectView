@@ -178,6 +178,8 @@
     if (duiCell == nil) {
         duiCell =[[DuiGouTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:duiHaoCellId];
     }
+    
+    
     //配置数据
     if (tableView.tag==101) {
         
