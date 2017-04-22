@@ -178,20 +178,12 @@
     if (duiCell == nil) {
         duiCell =[[DuiGouTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:duiHaoCellId];
     }
-    
-    
     //配置数据
     if (tableView.tag==101) {
-        
-        
         duiCell.cellLabel.text=self.selectXiaLadataArray[indexPath.row];
         
         [duiCell setNoDuiGouModle:[self cellIsSelected:indexPath]];
-        
-        
         return duiCell;
-        
-        
     }
     else
     {
@@ -209,8 +201,6 @@
 }
 
 - (BOOL)cellIsRightSelected:(NSIndexPath *)indexPath {
-    
-    
 
     NSNumber *selectedIndex = [self.selectedRightIndexes objectForKey:indexPath];
     return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
