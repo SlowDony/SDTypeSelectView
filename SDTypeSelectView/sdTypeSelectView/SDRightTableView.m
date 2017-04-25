@@ -38,8 +38,6 @@
     return tableView;
     
 }
-
-
 #pragma mark ----------UITabelViewDataSource----------
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

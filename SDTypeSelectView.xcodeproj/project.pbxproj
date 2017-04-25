@@ -19,6 +19,8 @@
 		18CDFEDB1E170672001F0581 /* SelectXialaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEDA1E170672001F0581 /* SelectXialaView.m */; };
 		18CDFEE11E170699001F0581 /* DuiGouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDFEDF1E170698001F0581 /* DuiGouTableViewCell.m */; };
 		18CDFEE51E170EB7001F0581 /* 客户管理筛选三列_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */; };
+		F3102C461EAF727C004E474C /* myViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3102C451EAF727C004E474C /* myViewController.m */; };
+		F3102C491EAF73B9004E474C /* SDSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3102C481EAF73B9004E474C /* SDSelectView.m */; };
 		F32552821EA766FE00043280 /* SDLeftTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F32552811EA766FE00043280 /* SDLeftTableView.m */; };
 		F32552851EA7671300043280 /* SDRightTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F32552841EA7671300043280 /* SDRightTableView.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,10 @@
 		18CDFEE21E17078E001F0581 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18CDFEE31E170803001F0581 /* EPMacro_Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPMacro_Function.h; sourceTree = "<group>"; };
 		18CDFEE41E170EB7001F0581 /* 客户管理筛选三列_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户管理筛选三列_03.png"; sourceTree = "<group>"; };
+		F3102C441EAF727C004E474C /* myViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myViewController.h; sourceTree = "<group>"; };
+		F3102C451EAF727C004E474C /* myViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myViewController.m; sourceTree = "<group>"; };
+		F3102C471EAF73B9004E474C /* SDSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSelectView.h; sourceTree = "<group>"; };
+		F3102C481EAF73B9004E474C /* SDSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSelectView.m; sourceTree = "<group>"; };
 		F32552801EA766FE00043280 /* SDLeftTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLeftTableView.h; sourceTree = "<group>"; };
 		F32552811EA766FE00043280 /* SDLeftTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLeftTableView.m; sourceTree = "<group>"; };
 		F32552831EA7671300043280 /* SDRightTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRightTableView.h; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 				18CDFEA91E16FE5F001F0581 /* AppDelegate.m */,
 				18CDFEAB1E16FE5F001F0581 /* ViewController.h */,
 				18CDFEAC1E16FE5F001F0581 /* ViewController.m */,
+				F3102C441EAF727C004E474C /* myViewController.h */,
+				F3102C451EAF727C004E474C /* myViewController.m */,
 				18CDFEAE1E16FE5F001F0581 /* Main.storyboard */,
 				18CDFEB11E16FE5F001F0581 /* Assets.xcassets */,
 				18CDFEB31E16FE5F001F0581 /* LaunchScreen.storyboard */,
@@ -174,6 +182,8 @@
 				F32552811EA766FE00043280 /* SDLeftTableView.m */,
 				F32552831EA7671300043280 /* SDRightTableView.h */,
 				F32552841EA7671300043280 /* SDRightTableView.m */,
+				F3102C471EAF73B9004E474C /* SDSelectView.h */,
+				F3102C481EAF73B9004E474C /* SDSelectView.m */,
 			);
 			path = sdTypeSelectView;
 			sourceTree = "<group>";
@@ -314,7 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CDFEAD1E16FE5F001F0581 /* ViewController.m in Sources */,
+				F3102C491EAF73B9004E474C /* SDSelectView.m in Sources */,
 				18CDFEAA1E16FE5F001F0581 /* AppDelegate.m in Sources */,
+				F3102C461EAF727C004E474C /* myViewController.m in Sources */,
 				18CDFEE11E170699001F0581 /* DuiGouTableViewCell.m in Sources */,
 				18CDFEDB1E170672001F0581 /* SelectXialaView.m in Sources */,
 				F32552851EA7671300043280 /* SDRightTableView.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SelectXialaView.h"
-
+#import "myViewController.h"
 @interface ViewController ()<SelectXialaViewDelegate>
 {
     SelectXialaView *selectV ;
@@ -97,6 +97,10 @@
 
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    myViewController *v =[[myViewController alloc]init];
+    [self presentViewController:v animated:YES completion:nil];
+}
 
 -(void)chongZhiData{
     
