@@ -17,27 +17,34 @@
     // Drawing code
 }
 */
-+(instancetype)tableViewWithFrame:(CGRect)frame delegate:(id<UITableViewDelegate,UITableViewDataSource>)delegate{
-    SDRightTableView *tableView = [[SDRightTableView alloc] initWithFrame:frame style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    //    tableView.tag=101;
-    //    self.selectXiaLadataArray=mutableArr;
-    tableView.showsVerticalScrollIndicator = YES;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    tableView.scrollEnabled=NO;
-    return tableView;
-    
-}
+//+(instancetype)tableViewWithFrame:(CGRect)frame delegate:(id<UITableViewDelegate,UITableViewDataSource>)delegate{
+//    SDRightTableView *tableView = [[SDRightTableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+//    tableView.delegate = self;
+//    tableView.dataSource = self;
+//    //    tableView.tag=101;
+//    //    self.selectXiaLadataArray=mutableArr;
+//    tableView.showsVerticalScrollIndicator = YES;
+//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    
+//    tableView.scrollEnabled=NO;
+//    return tableView;
+//    
+//}
 
 +(instancetype)tableViewWithFrame:(CGRect)frame{
-    SDRightTableView *tableView =[self tableViewWithFrame:frame delegate:nil];
+    SDRightTableView *tableView = [[self alloc]initWithFrame:frame style:UITableViewStylePlain];
     [tableView setDelegate:tableView];
     [tableView setDataSource:tableView];
     return tableView;
     
 }
+
+-(void)setRightArr:(NSMutableArray *)rightArr{
+    _rightArr =rightArr;
+    [self scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    [self reloadData];
+}
+
 #pragma mark ----------UITabelViewDataSource----------
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

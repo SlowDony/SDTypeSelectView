@@ -22,6 +22,6 @@
 +(instancetype)tableViewWithFrame:(CGRect )frame ;
 
 @property (nonatomic,strong)NSMutableArray *leftArr;
-@property (nonatomic,copy)void(^leftArrDidSelectHandler)(NSDictionary  *leftSelectDic);
+@property (nonatomic,copy)void(^leftArrDidSelectHandler)(NSArray *arr);
 
 @end

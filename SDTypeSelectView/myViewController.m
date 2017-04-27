@@ -31,13 +31,28 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self setUI];
 }
--(void)setUI{
-    
-        SDSelectView * selectView =[[SDSelectView alloc]initWithFrame:CGRectMake(0, 66+40, mDeviceWidth, mDeviceHeight) addDataArr:nil];
-    
-        self.selectView =selectView;
 
-        [self.view addSubview:selectView];
+
+-(SDSelectView *)selectView{
+    if (!_selectView) {
+        
+        NSArray *arr =@[@"哈哈哈",@"对对对",@"对对对",@"呃呃呃",@"ee",@"33"];
+        _selectView =[[SDSelectView alloc]initWithFrame:CGRectMake(0, 66+40, mDeviceWidth, mDeviceHeight) addDataArr:arr];
+       
+    }
+    return _selectView;
+}
+-(void)setUI{
+    //
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 66, mDeviceWidth, 40);
+    label.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:label];
+    
+    [self.view addSubview:self.selectView];
+    
+    
         
     
 

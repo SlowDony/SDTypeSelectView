@@ -44,13 +44,34 @@
 -(NSMutableArray *)leftArr{
     if(!_leftArr){
         
-        NSArray *arr =@[@{@"title":@"全程热门",@"value":@"0"},
-                        @{@"title":@"附近",@"value":@"1"},
-                        @{@"title":@"雁塔区",@"value":@"2"},
-                        @{@"title":@"未央区",@"value":@"3"},
-                        @{@"title":@"碑林区",@"value":@"4"},
-                        @{@"title":@"莲湖区",@"value":@"5"},
+        NSArray *arr =@[@{@"headTitle":@"病历概览",@"data":@[@{@"num":@"2",@"title":@"病历录入"},
+                                                         @{@"num":@"1",@"title":@"当日预约"},
+                                                         @{@"num":@"1",@"title":@"预约到日"},
+                                                         @{@"num":@"1",@"title":@"当日到诊"},
+                                                         @{@"num":@"1",@"title":@"预约未到诊"}
+                                                         ]},
+                        @{@"headTitle":@"渠道概览",@"data":@[@{@"num":@"2",@"title":@"咨询次数"},
+                                                         @{@"num":@"22",@"title":@"有效对话"},
+                                                         @{@"num":@"4",@"title":@"最佳对话"},
+                                                         @{@"num":@"1",@"title":@"优质对话"},
+                                                         @{@"num":@"1",@"title":@"一般对话"},
+                                                         @{@"num":@"1",@"title":@"主动邀请"}
+                                                         
+                                                         ]},
+                        @{@"headTitle":@"回访处理",@"data":@[@{@"num":@"3",@"title":@"今日已访"},
+                                                         @{@"num":@"2",@"title":@"当日需访"},
+                                                         @{@"num":@"22",@"title":@"逾期未回访"}
+                                                         ]},
+                        
+                        @{@"headTitle":@"回访处理",@"data":@[@{@"num":@"3",@"title":@"今日已访"},
+                                                         @{@"num":@"2",@"title":@"当日需访"},
+                                                         @{@"num":@"22",@"title":@"逾期未回访"}
+                                                         ]},
+                        @{@"headTitle":@"留言处理",@"data":@[@{@"num":@"24",@"title":@"留言"},
+                                                         @{@"num":@"3",@"title":@"未处理留言"}
+                                                         ]},
                         ];
+        
         _leftArr =[[NSMutableArray alloc]initWithArray:arr];
         
     }
@@ -71,7 +92,7 @@
 {
     DuiGouTableViewCell *duiCell  =[DuiGouTableViewCell cellWithTableView:self];
     NSDictionary *dic =self.leftArr[indexPath.row];
-    duiCell.cellLabel.text=dic[@"title"];
+    duiCell.cellLabel.text=dic[@"headTitle"];
     
 //    [duiCell setNoDuiGouModle:[self cellIsSelected:indexPath]];
     return duiCell;
@@ -85,8 +106,9 @@
 #pragma mark ----------UITabelViewDelegate----------
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSArray *arr =self.leftArr[indexPath.row][@"data"];
     
-    self.leftArrDidSelectHandler(self.leftArr[indexPath.row]);
+    self.leftArrDidSelectHandler(arr);
     
 }
 

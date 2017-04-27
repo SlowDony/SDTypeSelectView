@@ -39,10 +39,21 @@
         bjView.frame=CGRectMake(0, 0, self.frame.size.width, 0);
         [self addSubview:bjView];
         
-        self.leftView =[SDLeftTableView tableViewWithFrame:CGRectMake(0, 0,self.frame.size.width/2, 0)];
+        
+        [self setLeftView:[SDLeftTableView tableViewWithFrame:CGRectMake(0, 0,self.frame.size.width/2, 0)]];
+        
         
         
         [bjView addSubview:self.leftView];
+        
+        typeof(self) __weak weakSelf =self;
+        [self.leftView setLeftArrDidSelectHandler:^(NSArray *arr){
+            NSMutableArray *rightArr =[[NSMutableArray alloc]initWithArray:arr];
+            [weakSelf.rightView setRightArr:rightArr];
+        
+        }];
+        
+        
         
         self.rightView =[SDRightTableView tableViewWithFrame:CGRectMake(self.frame.size.width/2, 0,self.frame.size.width/2, 0)];
         
