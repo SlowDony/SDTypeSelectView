@@ -20,8 +20,9 @@
 +(instancetype)tableViewWithFrame:(CGRect )frame delegate:(id<UITableViewDelegate,UITableViewDataSource>) delegate;
 +(instancetype)tableViewWithFrame:(CGRect )frame ;
 
-@property (nonatomic,strong)NSMutableArray *rightArr;
-
+@property (nonatomic,strong)NSMutableArray *rightArr; //右列表数据源
+@property (nonatomic,strong)NSMutableDictionary *selectedIndexes;
+@property (nonatomic,strong)NSIndexPath *selectIndexPath;
 
 
 @end

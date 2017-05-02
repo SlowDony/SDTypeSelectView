@@ -36,8 +36,36 @@
 -(SDSelectView *)selectView{
     if (!_selectView) {
         
-        NSArray *arr =@[@"哈哈哈",@"对对对",@"对对对",@"呃呃呃",@"ee",@"33"];
-        _selectView =[[SDSelectView alloc]initWithFrame:CGRectMake(0, 66+40, mDeviceWidth, mDeviceHeight) addDataArr:arr];
+        NSArray *arr =@[@{@"headTitle":@"病历概览",@"data":@[@{@"num":@"2",@"title":@"病历录入"},
+                                                         @{@"num":@"1",@"title":@"当日预约"},
+                                                         @{@"num":@"1",@"title":@"预约到日"},
+                                                         @{@"num":@"1",@"title":@"当日到诊"},
+                                                         @{@"num":@"1",@"title":@"预约未到诊"}
+                                                         ]},
+                        @{@"headTitle":@"渠道概览",@"data":@[@{@"num":@"2",@"title":@"咨询次数"},
+                                                         @{@"num":@"22",@"title":@"有效对话"},
+                                                         @{@"num":@"4",@"title":@"最佳对话"},
+                                                         @{@"num":@"1",@"title":@"优质对话"},
+                                                         @{@"num":@"1",@"title":@"一般对话"},
+                                                         @{@"num":@"1",@"title":@"主动邀请"}
+                                                         
+                                                         ]},
+                        @{@"headTitle":@"回访处理",@"data":@[@{@"num":@"3",@"title":@"今日已访"},
+                                                         @{@"num":@"2",@"title":@"当日需访"},
+                                                         @{@"num":@"22",@"title":@"逾期未回访"}
+                                                         ]},
+                        
+                        @{@"headTitle":@"回访处理",@"data":@[@{@"num":@"3",@"title":@"今日已访"},
+                                                         @{@"num":@"2",@"title":@"当日需访"},
+                                                         @{@"num":@"22",@"title":@"逾期未回访"}
+                                                         ]},
+                        @{@"headTitle":@"留言处理",@"data":@[@{@"num":@"24",@"title":@"留言"},
+                                                         @{@"num":@"3",@"title":@"未处理留言"}
+                                                         ]},
+                        ];
+        
+        NSMutableArray *dataArr =[NSMutableArray arrayWithArray:arr];
+        _selectView =[[SDSelectView alloc]initWithFrame:CGRectMake(0, 66+40, mDeviceWidth, mDeviceHeight) addDataArr:dataArr];
        
     }
     return _selectView;
@@ -51,10 +79,6 @@
     [self.view addSubview:label];
     
     [self.view addSubview:self.selectView];
-    
-    
-        
-    
 
 }
 /*

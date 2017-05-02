@@ -33,10 +33,21 @@
 
 +(instancetype)tableViewWithFrame:(CGRect)frame{
     SDRightTableView *tableView = [[self alloc]initWithFrame:frame style:UITableViewStylePlain];
+    
+    tableView.showsVerticalScrollIndicator = YES;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     [tableView setDelegate:tableView];
     [tableView setDataSource:tableView];
     return tableView;
     
+}
+
+-(NSMutableDictionary *)selectedIndexes{
+    if (!_selectedIndexes) {
+        _selectedIndexes =[[NSMutableDictionary alloc]init];
+    }
+    return _selectedIndexes;
 }
 
 -(void)setRightArr:(NSMutableArray *)rightArr{
@@ -62,21 +73,26 @@
     NSDictionary *dic =self.rightArr[indexPath.row];
     
     [duiCell setCellLabelHangHight:dic[@"title"]];
-    
+    [duiCell setModle:[self cellIsSelected:indexPath]];
     return duiCell;
 }
 
-//- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
-//
-//    NSNumber *selectedIndex = [self.selectedIndexes objectForKey:indexPath];
-//    return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
-//}
+- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
+
+    NSNumber *selectedIndex = [self.selectedIndexes objectForKey:indexPath];
+    return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
+}
 #pragma mark ----------UITabelViewDelegate----------
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.selectedIndexes removeAllObjects];
     
+    self.selectIndexPath =[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
     
+    NSNumber *selectedIndex = [NSNumber numberWithBool:YES];
+    [self.selectedIndexes setObject:selectedIndex forKey:indexPath];
     
+    [self reloadData];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

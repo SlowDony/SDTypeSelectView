@@ -41,41 +41,17 @@
 
 }
 
--(NSMutableArray *)leftArr{
-    if(!_leftArr){
-        
-        NSArray *arr =@[@{@"headTitle":@"病历概览",@"data":@[@{@"num":@"2",@"title":@"病历录入"},
-                                                         @{@"num":@"1",@"title":@"当日预约"},
-                                                         @{@"num":@"1",@"title":@"预约到日"},
-                                                         @{@"num":@"1",@"title":@"当日到诊"},
-                                                         @{@"num":@"1",@"title":@"预约未到诊"}
-                                                         ]},
-                        @{@"headTitle":@"渠道概览",@"data":@[@{@"num":@"2",@"title":@"咨询次数"},
-                                                         @{@"num":@"22",@"title":@"有效对话"},
-                                                         @{@"num":@"4",@"title":@"最佳对话"},
-                                                         @{@"num":@"1",@"title":@"优质对话"},
-                                                         @{@"num":@"1",@"title":@"一般对话"},
-                                                         @{@"num":@"1",@"title":@"主动邀请"}
-                                                         
-                                                         ]},
-                        @{@"headTitle":@"回访处理",@"data":@[@{@"num":@"3",@"title":@"今日已访"},
-                                                         @{@"num":@"2",@"title":@"当日需访"},
-                                                         @{@"num":@"22",@"title":@"逾期未回访"}
-                                                         ]},
-                        
-                        @{@"headTitle":@"回访处理",@"data":@[@{@"num":@"3",@"title":@"今日已访"},
-                                                         @{@"num":@"2",@"title":@"当日需访"},
-                                                         @{@"num":@"22",@"title":@"逾期未回访"}
-                                                         ]},
-                        @{@"headTitle":@"留言处理",@"data":@[@{@"num":@"24",@"title":@"留言"},
-                                                         @{@"num":@"3",@"title":@"未处理留言"}
-                                                         ]},
-                        ];
-        
-        _leftArr =[[NSMutableArray alloc]initWithArray:arr];
-        
+-(NSMutableDictionary *)selectedIndexes{
+    if (!_selectedIndexes) {
+        _selectedIndexes =[[NSMutableDictionary alloc]init];
     }
-    return _leftArr;
+    return _selectedIndexes;
+}
+-(void)setLeftArr:(NSMutableArray *)leftArr{
+    _leftArr =leftArr;
+    self.selectIndexPath =[NSIndexPath indexPathForRow:0 inSection:0];
+
+    [self reloadData];
 }
 #pragma mark ----------UITabelViewDataSource----------
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -94,18 +70,29 @@
     NSDictionary *dic =self.leftArr[indexPath.row];
     duiCell.cellLabel.text=dic[@"headTitle"];
     
-//    [duiCell setNoDuiGouModle:[self cellIsSelected:indexPath]];
+    [duiCell setNoDuiGouModle:[self cellIsSelected:indexPath]];
     return duiCell;
 }
 
-//- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
-//    
-//    NSNumber *selectedIndex = [self.selectedIndexes objectForKey:indexPath];
-//    return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
-//}
+- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
+    
+    NSNumber *selectedIndex = [self.selectedIndexes objectForKey:indexPath];
+    return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
+}
+
 #pragma mark ----------UITabelViewDelegate----------
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.selectedIndexes removeAllObjects];
+    
+    self.selectIndexPath =[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
+    
+    NSNumber *selectedIndex = [NSNumber numberWithBool:YES];
+    
+    [self.selectedIndexes setObject:selectedIndex forKey:indexPath];
+    
+    [self reloadData];
+    
     NSArray *arr =self.leftArr[indexPath.row][@"data"];
     
     self.leftArrDidSelectHandler(arr);

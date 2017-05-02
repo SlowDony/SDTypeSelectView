@@ -21,7 +21,10 @@
 +(instancetype)tableViewWithFrame:(CGRect )frame delegate:(id<UITableViewDelegate,UITableViewDataSource>) delegate;
 +(instancetype)tableViewWithFrame:(CGRect )frame ;
 
-@property (nonatomic,strong)NSMutableArray *leftArr;
+@property (nonatomic,strong)NSMutableArray *leftArr; //数据源
+@property (nonatomic,strong)NSMutableDictionary *selectedIndexes;
+@property (nonatomic,strong)NSIndexPath *selectIndexPath;
+
 @property (nonatomic,copy)void(^leftArrDidSelectHandler)(NSArray *arr);
 
 @end

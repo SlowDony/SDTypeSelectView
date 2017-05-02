@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "SelectXialaView.h"
 #import "myViewController.h"
-@interface ViewController ()<SelectXialaViewDelegate>
+@interface ViewController ()
+<SelectXialaViewDelegate>
 {
     SelectXialaView *selectV ;
     NSMutableArray *mutableArr;
@@ -31,7 +32,6 @@
     NSMutableDictionary *dic =[[NSMutableDictionary alloc]init];
     [dic setObject:selectedIndex forKey:rightSelectIndexPath];
     
-    
     [selectArr removeAllObjects];
     for (int i=0;i<mutableArr.count ;i++){
         [selectArr addObject:dic];
@@ -39,7 +39,7 @@
     [selectLeftArr removeAllObjects];
     
     [selectLeftArr addObject:rightSelectIndexPath];
-    
+    DLog(@"selectLeftArr:%@",selectArr);
     
     [self addNavView];
      [self setUI];
@@ -67,6 +67,7 @@
 }
 
 -(void)btn{
+    //添加列表
     if(selectV==nil){
         selectV =[[SelectXialaView alloc]initWithFrame:CGRectMake(0, 66+40, mDeviceWidth, mDeviceHeight) addDataArr:mutableArr];
         selectV.delegate=self;
@@ -179,16 +180,16 @@
     }
 }
 
-//左列表
+//左列表点击
 -(void)SelectXialaLeftView:(UITableView *)leftTableView andRightTableView:(UITableView *)rightTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    DLog(@"self.selectDIc :%@",selectV.selectedIndexes);
+    DLog(@"self.selectDIc左列表点击第:%@ 行",selectV.selectedIndexes);
     
     //    NSIndexPath *rightIndexSelect =selectV.selectedIndexes[@"1"];
     //    DLog(@"rightIndexSelect section:%ld  and row %ld",indexPath.section,indexPath.row);
     
     
-    DLog(@"selectArr:%@,selectArr数量:%ld",selectArr ,selectArr.count);
+    DLog(@"左列表的数据selectArr:%@,selectArr数量:%ld",selectArr ,selectArr.count);
     
     //    DLog(@"selectV.selectedRightIndexes%@",selectV.selectedRightIndexes);
     
@@ -214,14 +215,9 @@
                                       atScrollPosition:UITableViewScrollPositionMiddle
                                               animated:NO];
     }
-    
-    
-    
-    
-    
 }
 
-
+//左列表点击后给右列表的数据
 -(void)rightTableAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
         case 0: //全程热门
@@ -336,6 +332,8 @@
     }
     
 }
+
+//点击右列表
 -(void)SelectXialaRightView:(UITableView *)rightTableView andLeftTableView:(UITableView *)leftTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath andLeftIndexPath:(NSIndexPath *)leftIndexPath{
     DLog(@"点击了左列表的第:%ld行,右列表的第%ld行",leftIndexPath.row,indexPath.row);
     

@@ -41,9 +41,8 @@
         
         
         [self setLeftView:[SDLeftTableView tableViewWithFrame:CGRectMake(0, 0,self.frame.size.width/2, 0)]];
-        
-        
-        
+        NSMutableArray *leftArr =[[NSMutableArray alloc]initWithArray:mutableArr];
+        [self.leftView setLeftArr:leftArr];
         [bjView addSubview:self.leftView];
         
         typeof(self) __weak weakSelf =self;
@@ -52,8 +51,6 @@
             [weakSelf.rightView setRightArr:rightArr];
         
         }];
-        
-        
         
         self.rightView =[SDRightTableView tableViewWithFrame:CGRectMake(self.frame.size.width/2, 0,self.frame.size.width/2, 0)];
         
@@ -86,9 +83,9 @@
         [bjView addSubview: sureBtn];
         
         [UIView animateWithDuration:0.4 animations:^{
-            self.leftView.frame=CGRectMake(0, 0, self.frame.size.width/2, mutableArr.count*35);
-            self.rightView.frame=CGRectMake(self.frame.size.width/2, 0, self.frame.size.width/2, mutableArr.count*35);
-            bjView.frame=CGRectMake(0, 0, self.frame.size.width, mutableArr.count*35+40);
+            self.leftView.frame=CGRectMake(0, 0, self.frame.size.width/2, mutableArr.count*44);
+            self.rightView.frame=CGRectMake(self.frame.size.width/2, 0, self.frame.size.width/2, mutableArr.count*44);
+            bjView.frame=CGRectMake(0, 0, self.frame.size.width, mutableArr.count*44+40);
             
             chongZhiBtn.frame = CGRectMake(self.frame.size.width-120,bjView.frame.size.height-40,40, 40);
             sureBtn.frame = CGRectMake(self.frame.size.width-60, bjView.frame.size.height-40, 40, 40);
@@ -108,16 +105,24 @@
 //    if([self.delegate respondsToSelector:@selector(SelectXialaViewBtn:)]){
 //        [self.delegate SelectXialaViewBtn:sender];
 //    }
-//    switch (sender.tag) {
-//        case 1002:
-//        {
-//            //            [self savaSels];
-//        }
-//            break;
-//            
-//        default:
-//            break;
-//    }
     
+    switch (sender.tag) {
+        case 1001: //重置
+        {
+            
+        }
+            break;
+        case 1002: //确认
+        {
+            [self remove];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)remove{
+    [self removeFromSuperview];
 }
 @end
